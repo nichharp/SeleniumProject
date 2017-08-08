@@ -32,17 +32,17 @@ public class LoginPage {
         submitButton.click();
     }
 
-    public void wait(String findme) {
+//    public void wait(String findme) {
 //        final findme;
-
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver)
-        .withTimeout(20, TimeUnit.SECONDS)
-        .pollingEvery(10, TimeUnit.SECONDS)
-        .ignoring(NoSuchElementException.class);
-    WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
-        public WebElement apply(WebDriver driver) {
-            return driver.findElement(By.cssSelector(findme));
-        }
-    });
-    }
+//
+//        Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver)
+//        .withTimeout(20, TimeUnit.SECONDS)
+//        .pollingEvery(10, TimeUnit.SECONDS)
+//        .ignoring(NoSuchElementException.class);
+//    WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+//        public WebElement apply(WebDriver driver) {
+//            return driver.findElement(By.cssSelector(findme));
+//        }
+//    });
+//    }
 }

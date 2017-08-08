@@ -36,8 +36,16 @@ public class nClass {
         loginPage.enterPassword("adamsux");
         loginPage.clickButton();
 
-        loginPage.wait("b:nth-child(1)");
-
+//        loginPage.wait("b:nth-child(1)");
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver)
+                .withTimeout(20, TimeUnit.SECONDS)
+                .pollingEvery(10, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class);
+        WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver driver) {
+                return driver.findElement(By.cssSelector("b:nth-child(1)"));
+            }
+        });
 
 
 //        webDriver.navigate().to("http://thedemosite.co.uk/login.php");
