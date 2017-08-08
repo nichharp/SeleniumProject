@@ -30,7 +30,7 @@ public class nClass {
     public static void init(){}
 
     @Before
-    public void bef() {
+    public void bef() throws IOException {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
 
@@ -45,11 +45,7 @@ public class nClass {
         webDriver = new ChromeDriver(options);
         loginPage= PageFactory.initElements(webDriver,LoginPage.class);
 
-        try {
-            screenshot = Screenshott.take(webDriver, );
-        } catch (IOException e) {
-            e.fillInStackTrace();
-        }
+        screenshot = PageFactory.initElements(webDriver, Screenshott.class);
     }
 
     @Test
