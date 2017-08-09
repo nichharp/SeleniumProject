@@ -73,7 +73,7 @@ public class nClass {
         loginPage.enterPassword("adamsux");
 
         try {
-            screenshot.take(webDriver, "take1");
+            test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
         } catch (IOException e) {
             e.fillInStackTrace();
         }
@@ -82,6 +82,8 @@ public class nClass {
 
         test.log(Status.INFO, "Info Level");
         test.pass("Pass");
+
+
     }
 
     @After
