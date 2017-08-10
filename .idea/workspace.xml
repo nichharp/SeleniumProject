@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbf4c6cb-592a-4ff8-86f0-e3ee5c0f4a7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/DisSheet.xlsx" afterPath="$PROJECT_DIR$/src/main/resources/DisSheet.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/take1.jpg" afterPath="$PROJECT_DIR$/take1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ADAM/LoginPage.class" afterPath="$PROJECT_DIR$/target/classes/ADAM/LoginPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ADAM/nClass.class" afterPath="$PROJECT_DIR$/target/classes/ADAM/nClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/DisSheet.xlsx" afterPath="$PROJECT_DIR$/target/classes/DisSheet.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ADAM/nClass.java" afterPath="$PROJECT_DIR$/src/main/java/ADAM/nClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.HTML" afterPath="$PROJECT_DIR$/test.HTML" />
@@ -89,10 +84,11 @@
       <file leaf-file-name="nClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ADAM/nClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="38" column="31" selection-start-line="34" selection-start-column="8" selection-end-line="38" selection-end-column="31" />
+            <state relative-caret-position="502">
+              <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#init#0;class#nClass#0" expanded="false" />
+                <element signature="method#bef#0;class#nClass#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -595,15 +591,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ClassRunner - 2017.08.10 at 14h 19m 51s.xml">
-      <configuration name="ClassRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClassRunner - 2017.08.10 at 14h 21m 31s.xml">
-      <configuration name="ClassRunner" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ClassRunner - 2017.08.10 at 14h 26m 03s.xml">
-      <configuration name="ClassRunner" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ClassRunner - 2017.08.10 at 14h 33m 39s.xml">
       <configuration name="ClassRunner" configurationId="JUnit" />
     </history-entry>
@@ -625,6 +612,15 @@
     <history-entry file="ClassRunner - 2017.08.10 at 15h 57m 56s.xml">
       <configuration name="ClassRunner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ClassRunner - 2017.08.10 at 16h 39m 10s.xml">
+      <configuration name="ClassRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClassRunner - 2017.08.10 at 16h 41m 15s.xml">
+      <configuration name="ClassRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ClassRunner - 2017.08.10 at 17h 03m 43s.xml">
+      <configuration name="ClassRunner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -638,7 +634,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1467793" sideWeight="0.5083333" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2122492" sideWeight="0.49166667" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23336853" sideWeight="0.49166667" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -758,7 +754,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#nClass#0" expanded="false" />
+            <element signature="method#bef#0;class#nClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,7 +809,8 @@
         <state relative-caret-position="544">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#nClass#0" expanded="false" />
+            <element signature="method#bef#0;class#nClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -845,7 +843,8 @@
         <state relative-caret-position="510">
           <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#nClass#0" expanded="false" />
+            <element signature="method#bef#0;class#nClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -891,7 +890,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#nClass#0" expanded="false" />
+            <element signature="method#bef#0;class#nClass#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -978,10 +978,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ADAM/nClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="38" column="31" selection-start-line="34" selection-start-column="8" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="502">
+          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#nClass#0" expanded="false" />
+            <element signature="method#bef#0;class#nClass#0" expanded="false" />
           </folding>
         </state>
       </provider>

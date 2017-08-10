@@ -1,11 +1,7 @@
 package ADAM;
-
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.sun.javafx.image.IntPixelGetter;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,7 +16,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.concurrent.TimeUnit;
-
 public class nClass {
     private WebDriver webDriver;
     private LoginPage loginPage;
@@ -50,7 +45,6 @@ public class nClass {
         webDriver = new ChromeDriver(options);
         loginPage= PageFactory.initElements(webDriver,LoginPage.class);
         screenshot = PageFactory.initElements(webDriver, Screenshott.class);
-
     }
 
     @Test
@@ -65,7 +59,7 @@ public class nClass {
         mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(100, 0).release().perform();
         mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(0, 100).release().perform();
 
-        test.log(Status.INFO, "Info Level");
+//        test.log(Status.INFO, "Info Level");
         test.pass("Pass");
     }
 
@@ -90,7 +84,7 @@ public class nClass {
             }
             mousey.release().perform();
         }
-        test.log(Status.INFO, "Info Level");
+//        test.log(Status.INFO, "Info Level");
         test.pass("Pass");
     }
 
@@ -114,7 +108,7 @@ public class nClass {
 //            e.fillInStackTrace();
 //        }
         mousey.release().perform();
-        test.log(Status.INFO, "Info Level");
+//        test.log(Status.INFO, "Info Level");
 
 
         if (webDriver.getPageSource().contains("#1#2#3")) {
@@ -139,30 +133,13 @@ public class nClass {
         } catch (IOException e) {
             e.fillInStackTrace();
         }
-        test.log(Status.INFO, "Info Level");
+//        test.log(Status.INFO, "Info Level");
 
         if (webDriver.getPageSource().contains("9")) {
             test.pass("Pass");
         } else {
             test.pass("Fail");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //        assert  (webDriver.findElement(By.xpath("//*[@id='select-result']"))) == "#1#2#3") ;
 
 //        loginPage.enterUsername(row.get(2));
@@ -186,23 +163,27 @@ public class nClass {
 //        webDriver.navigate().to("http://thedemosite.co.uk/login.php");
 //        loginPage.enterUsername(row.get(2));
 //        loginPage.enterPassword(row.get(3));
-//        try {test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
-//        } catch (IOException e) {e.fillInStackTrace();}
+
 //        loginPage.clickButton();
 //
 //        assert eOne
 //        test.log(Status.INFO, "Info Level");
 //        test.pass("Pass");
-
-
     }
 
     @After
     public void aft(){
         System.out.println("After");
+        try {test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
+        } catch (IOException e) {e.fillInStackTrace();}
+        test.log(Status.INFO, "Info Level");
         webDriver.quit();
-//        tests.clear();
         report.flush();
+    }
+    @AfterClass
+    public static void aftcla(){
+        System.out.println("After Class");
+
     }
 
 }
