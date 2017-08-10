@@ -15,6 +15,16 @@ public class LoginPage {
 
     private WebDriver webDriver;
 
+    @FindBy(xpath = "//*[@id='menu-item-97']/a")
+    private WebElement sliderbutt;
+
+
+    @FindBy(xpath = "//*[@id=\'ui-id-3\']")
+    private WebElement serializebutt;
+
+    @FindBy(xpath = "//*[@id='menu-item-142']/a")
+    private WebElement selectbutt;
+
     @FindBy(xpath = "//*[@id=\'ui-id-3\']")
     private WebElement dispAsGridbutt;
 
@@ -45,6 +55,10 @@ public class LoginPage {
     public void draggableClick() {draggablebutt.click();}
     public void sortableClick() {sortablebutt.click();}
     public void dispAsGridClick() {dispAsGridbutt.click();}
+    public void selectableClick() {selectbutt.click();}
+    public void serializeClick() {serializebutt.click();}
+    public void sliderClick() {sliderbutt.click();}
+
 
 
 //    public void wait(String findme) {

@@ -28,7 +28,7 @@ public class SheetReader {
 
     public List<String> readRow(int rowNo, String sheetname) {
         List<String> row = new ArrayList<String>();
-        Sheet datatypeSheet = workbook.getSheet(sheetname);                 //here
+        Sheet datatypeSheet = workbook.getSheet(sheetname);
         Row currentRow = datatypeSheet.getRow(rowNo);
         for (Cell currentCell : currentRow) {
             switch (currentCell.getCellTypeEnum()) {

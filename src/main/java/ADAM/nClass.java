@@ -1,6 +1,7 @@
 package ADAM;
 
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.sun.javafx.image.IntPixelGetter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -51,48 +52,115 @@ public class nClass {
     @Test
     public void tes() {
         Actions mousey = new Actions(webDriver);
+        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
         System.out.println("test started");
+
+
         webDriver.navigate().to("http://www.demoqa.com");
         loginPage.draggableClick();
-        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(100, 100).release().perform();
-//        test.log(Status.INFO, "Info Level");
-//        test.pass("Pass");
-//    }
+        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(100, 0).release().perform();
+        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(0, 100).release().perform();
 
-//    @Test
-//    public void tesAgain() {
-//        Actions mousey = new Actions(webDriver);
+        test.log(Status.INFO, "Info Level");
+        test.pass("Pass");
+    }
+
+    @Test
+    public void tes2() {
+                Actions mousey = new Actions(webDriver);
+        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
+        System.out.println("test2 started");
+        webDriver.navigate().to("http://www.demoqa.com");
+
+
         loginPage.sortableClick();
         loginPage.dispAsGridClick();
-        WebElement One = webDriver.findElement(By.xpath("//*[@id=\'sortable_grid\']/li[1]"));
 
-        System.out.println(One.getLocation());
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
-            e.fillInStackTrace();
+
+        for (int i =1;i<12;i++) {
+            List<String> row = sheetReader.readRow(i, "Sheet1");
+            mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id='sortable_grid']/li[12]"))).clickAndHold().moveByOffset(0,Integer.valueOf(row.get(2).substring(0, row.get(2).length() - 2))).perform();
+
+            if (i!=4 & i!=8){
+                mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id='sortable_grid']/li[12]"))).clickAndHold().moveByOffset(Integer.valueOf(row.get(3).substring(0, row.get(3).length() - 2)), 0).perform();
+            }
+            mousey.release().perform();
         }
-        mousey.moveToElement(One).clickAndHold().moveByOffset(200,2).perform();
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
-            e.fillInStackTrace();
-        }
-        System.out.println(One.getLocation());
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
-            e.fillInStackTrace();
-        }
+        test.log(Status.INFO, "Info Level");
+        test.pass("Pass");
+    }
+
+
+    @Test
+    public void tes3() {
+        Actions mousey = new Actions(webDriver);
+        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
+        System.out.println("test3 started");
+        webDriver.navigate().to("http://www.demoqa.com");
+
+        loginPage.selectableClick();
+        loginPage.serializeClick();
+        List<String> row = sheetReader.readRow(12, "Sheet1");
+        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'selectable-serialize\']/li[1]"))).perform();
+        row = sheetReader.readRow(13, "Sheet1");
+        mousey.clickAndHold().moveByOffset(Integer.valueOf(row.get(2).substring(0, row.get(2).length() - 2)), Integer.valueOf(row.get(3).substring(0, row.get(3).length() - 2))).perform();
+//        try {
+//            TimeUnit.SECONDS.sleep(1);
+//        } catch (Exception e) {
+//            e.fillInStackTrace();
+//        }
         mousey.release().perform();
+        test.log(Status.INFO, "Info Level");
+        if (webDriver.getPageSource().contains("#1#2#3")) {
+            test.pass("Pass");
+        } else {
+            test.pass("Fail");
+        }
+    }
+
+    @Test
+    public void tes4() {
+        Actions mousey = new Actions(webDriver);
+        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
+        System.out.println("test4 started");
+        webDriver.navigate().to("http://www.demoqa.com");
+        loginPage.sliderClick();
+        List<String> row = sheetReader.readRow(14, "Sheet1");
+        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'slider-range-max\']/span"))).perform();
+        mousey.clickAndHold().moveByOffset(Integer.valueOf(row.get(2).substring(0, row.get(2).length() - 2)), Integer.valueOf(row.get(3).substring(0, row.get(3).length() - 2))).perform();
         try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (Exception e) {
+            test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
+        } catch (IOException e) {
             e.fillInStackTrace();
         }
-        System.out.println(One.getLocation());
+        test.log(Status.INFO, "Info Level");
 
-//        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
+        if (webDriver.getPageSource().contains("9")) {
+            test.pass("Pass");
+        } else {
+            test.pass("Fail");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        assert  (webDriver.findElement(By.xpath("//*[@id='select-result']"))) == "#1#2#3") ;
+
+//        loginPage.enterUsername(row.get(2));
+//        loginPage.enterPassword(row.get(3));
 //        System.out.println("Test");
 //        webDriver.navigate().to("http://thedemosite.co.uk/addauser.php");
 //        List<String> row = sheetReader.readRow(1, "Sheet1");
@@ -112,13 +180,13 @@ public class nClass {
 //        webDriver.navigate().to("http://thedemosite.co.uk/login.php");
 //        loginPage.enterUsername(row.get(2));
 //        loginPage.enterPassword(row.get(3));
-        try {test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
-        } catch (IOException e) {e.fillInStackTrace();}
+//        try {test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
+//        } catch (IOException e) {e.fillInStackTrace();}
 //        loginPage.clickButton();
 //
 //        assert eOne
-        test.log(Status.INFO, "Info Level");
-        test.pass("Pass");
+//        test.log(Status.INFO, "Info Level");
+//        test.pass("Pass");
 
 
     }
