@@ -26,27 +26,31 @@ public class nClass {
     private LoginPage loginPage;
     private Screenshott screenshot;
 //    private static ExtentReportManager reportManager;
-    private ExtentReports report;
+    private static ExtentReports report;
     private ExtentTest test;
-    private String reportFilePath = "test.HTML";
+    private static String reportFilePath = "test.HTML";
 
     @BeforeClass
-    public static void init(){}
-
-    @Before
-    public void bef() throws IOException {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized");
+    public static void init(){
         report= new ExtentReports();
         ExtentHtmlReporter extentHtmlReporter = new ExtentHtmlReporter(reportFilePath);
         extentHtmlReporter.config().setReportName("Look at how well it ran!");
         extentHtmlReporter.config().setDocumentTitle("Document YEY!");
         report.attachReporter(extentHtmlReporter);
+
+
+    }
+
+    @Before
+    public void bef() throws IOException {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
         test = report.createTest("Will it Run?");
         System.out.println("Before");
         webDriver = new ChromeDriver(options);
         loginPage= PageFactory.initElements(webDriver,LoginPage.class);
         screenshot = PageFactory.initElements(webDriver, Screenshott.class);
+
     }
 
     @Test
@@ -111,6 +115,8 @@ public class nClass {
 //        }
         mousey.release().perform();
         test.log(Status.INFO, "Info Level");
+
+
         if (webDriver.getPageSource().contains("#1#2#3")) {
             test.pass("Pass");
         } else {
