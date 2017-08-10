@@ -12,7 +12,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class LoginPage {
+
     private WebDriver webDriver;
+
+    @FindBy(xpath = "//*[@id=\'ui-id-3\']")
+    private WebElement dispAsGridbutt;
+
+    @FindBy(xpath = "//*[@id=\'menu-item-140\']/a")
+    private WebElement draggablebutt;
+
+    @FindBy(xpath = "//*[@id='menu-item-151\']/a")
+    private WebElement sortablebutt;
+
     @FindBy(name = "username")
     private WebElement usernameInput;
 
@@ -31,6 +42,10 @@ public class LoginPage {
     public void clickButton() {
         submitButton.click();
     }
+    public void draggableClick() {draggablebutt.click();}
+    public void sortableClick() {sortablebutt.click();}
+    public void dispAsGridClick() {dispAsGridbutt.click();}
+
 
 //    public void wait(String findme) {
 //        final findme;

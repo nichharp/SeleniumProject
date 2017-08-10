@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import java.util.concurrent.TimeUnit;
 
 public class nClass {
     private WebDriver webDriver;
@@ -44,19 +46,59 @@ public class nClass {
         webDriver = new ChromeDriver(options);
         loginPage= PageFactory.initElements(webDriver,LoginPage.class);
         screenshot = PageFactory.initElements(webDriver, Screenshott.class);
-
     }
 
     @Test
     public void tes() {
-        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");        System.out.println("Test");
-        webDriver.navigate().to("http://thedemosite.co.uk/addauser.php");
+        Actions mousey = new Actions(webDriver);
+        System.out.println("test started");
+        webDriver.navigate().to("http://www.demoqa.com");
+        loginPage.draggableClick();
+        mousey.moveToElement(webDriver.findElement(By.xpath("//*[@id=\'draggable\']"))).clickAndHold().moveByOffset(100, 100).release().perform();
+//        test.log(Status.INFO, "Info Level");
+//        test.pass("Pass");
+//    }
 
-        List<String> row = sheetReader.readRow(1, "Sheet1");
-        loginPage.enterUsername(row.get(2));
-        loginPage.enterPassword(row.get(3));
-        loginPage.clickButton();
+//    @Test
+//    public void tesAgain() {
+//        Actions mousey = new Actions(webDriver);
+        loginPage.sortableClick();
+        loginPage.dispAsGridClick();
+        WebElement One = webDriver.findElement(By.xpath("//*[@id=\'sortable_grid\']/li[1]"));
 
+        System.out.println(One.getLocation());
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (Exception e) {
+            e.fillInStackTrace();
+        }
+        mousey.moveToElement(One).clickAndHold().moveByOffset(200,2).perform();
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (Exception e) {
+            e.fillInStackTrace();
+        }
+        System.out.println(One.getLocation());
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (Exception e) {
+            e.fillInStackTrace();
+        }
+        mousey.release().perform();
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (Exception e) {
+            e.fillInStackTrace();
+        }
+        System.out.println(One.getLocation());
+
+//        SheetReader sheetReader = new SheetReader("C:\\Users\\Administrator\\IdeaProjects\\SeleniumProject\\src\\main\\resources\\DisSheet.xlsx");
+//        System.out.println("Test");
+//        webDriver.navigate().to("http://thedemosite.co.uk/addauser.php");
+//        List<String> row = sheetReader.readRow(1, "Sheet1");
+//        loginPage.enterUsername(row.get(2));
+//        loginPage.enterPassword(row.get(3));
+//        loginPage.clickButton();
 //        loginPage.wait("b:nth-child(1)");
 //        Wait<WebDriver> wait = new FluentWait<WebDriver>(webDriver)
 //                .withTimeout(20, TimeUnit.SECONDS)
@@ -68,13 +110,13 @@ public class nClass {
 //            }
 //        });
 //        webDriver.navigate().to("http://thedemosite.co.uk/login.php");
-
-        loginPage.enterUsername(row.get(2));
-        loginPage.enterPassword(row.get(3));
+//        loginPage.enterUsername(row.get(2));
+//        loginPage.enterPassword(row.get(3));
         try {test.addScreenCaptureFromPath(screenshot.take(webDriver, "take1")); //because take returns a filepath!!!!
         } catch (IOException e) {e.fillInStackTrace();}
-        loginPage.clickButton();
-
+//        loginPage.clickButton();
+//
+//        assert eOne
         test.log(Status.INFO, "Info Level");
         test.pass("Pass");
 
